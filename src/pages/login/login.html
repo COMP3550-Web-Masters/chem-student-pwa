@@ -1,0 +1,42 @@
+
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- Login Page -->
+  <div text-center class="authentication-intro">
+    <p>Hello there!</p>
+    <p>Please fill out the form below to get started</p>
+  </div>
+  
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+
+    <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+    <p class="form-error" *ngIf="!loginForm.controls['email'].valid && loginForm.controls['email'].touched" ion-item no-lines>
+        *Please enter a valid email
+    </p>
+    
+    <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <p class="form-error" *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched" ion-item no-lines>
+        *Please enter a valid password
+    </p>
+    
+
+    <button class="btn-margin-top" type="submit" [disabled]="!loginForm.valid" color="primary" ion-button block>Login</button>
+
+    <p class="authentication-switch" text-center ion-item no-lines>
+        <a (click)="goToSignup()">Don't have an account? Signup</a>
+    </p>
+
+  </form>
+  
+</ion-content>

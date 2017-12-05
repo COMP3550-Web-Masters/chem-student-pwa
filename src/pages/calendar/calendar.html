@@ -1,0 +1,48 @@
+<!--
+  Generated template for the CalendarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <h4>{{ viewTitle }}</h4>
+    <calendar [eventSource]="eventSource"
+        [calendarMode]="calendar.mode"
+        [currentDate]="calendar.currentDate"
+        (onEventSelected)="onEventSelected($event)"
+        (onTitleChanged)="onViewTitleChanged($event)"
+        (onTimeSelected)="onTimeSelected($event)"
+        step="30"
+        class="calendar">
+    </calendar>
+
+    <ion-spinner name="circles" *ngIf="isLoading"></ion-spinner>
+
+    <ion-list>
+      <ion-item *ngFor="let event of eventSource">
+        {{event.title}}
+      </ion-item>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-segment>
+        <ion-segment-button value="today" [disabled]="isToday" (click)="today()">Today</ion-segment-button>
+        <ion-segment-button value="month" (click)="changeMode('month')">M</ion-segment-button>
+        <ion-segment-button value="week" (click)="changeMode('week')">W</ion-segment-button>
+        <ion-segment-button value="day" (click)="changeMode('day')">D</ion-segment-button>
+      </ion-segment>
+  </ion-toolbar>
+</ion-footer>

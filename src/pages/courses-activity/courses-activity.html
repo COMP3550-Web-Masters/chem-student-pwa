@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons end>
+      <button navPush="CoursesDetailsPage" [navParams]="{enrollObj: enroll, enrolled: true}" ion-button>
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>{{enroll?.code}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- Main Content -->
+<ion-content padding>
+    <div class="container">
+      <!-- Show Loader -->
+      <div *ngIf="showSpinner" class="loader"></div>
+      
+      <h3>Course Posts</h3>
+        <p class="lead" *ngIf="enroll">Course message panel</p>
+        <p class="lead" *ngIf="!enroll">Sorry, no post available yet...</p>
+        
+        <!-- POST TILE -->
+        <div class="row" *ngFor = "let course of courseActiityList$ | async">
+          <div class="post-tile animated rollIn">
+            <div class="post-img">
+                <!-- Image for message type -->
+            </div>
+            <div class="post-content">
+              <div class="post-title animated fadeInRightBig">
+                <h6><a href="{{course?.extras}}">{{course?.title}}</a></h6>
+              </div>
+              <div class="post-preview">
+                {{course?.preview}} test statement to students
+                <!-- Post body... -->
+              </div>
+              <span class="post-author">{{course?.author}}</span>
+              <span class="post-date">posted on 22/2/12</span>
+            </div>
+          </div>
+        </div><!-- End post-tile -->
+    </div>
+</ion-content>

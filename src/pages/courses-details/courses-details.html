@@ -1,0 +1,35 @@
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{course?.code}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="page">
+    <div class="details-con">
+        <div class="details-head">
+          <ul>
+            <li><span>Course Title: {{course?.name}}</span></li>
+            <li><span>Course Code:</span> {{course?.code}}</li>
+            <li><span>Credits:</span> {{course?.credits}}</li>
+            <li><span>Prerequisite:</span> {{course?.prerequisite}}</li>
+          </ul>
+          <button *ngIf="!enrolled" ion-button block clear (click)="enroll(course)" class="btn">Enroll</button>
+          <button *ngIf="enrolled" ion-button block clear (click)="unenroll(enrollObj)" class="btn">Unenroll</button>
+        </div>
+        <div class="details-descrip">
+          <div class="details-particulars">
+            <div class="detailImg"></div>
+            <div class="info">
+              <span>Lecturer: </span> {{course?.Lecturer}}<br>
+              <span>Office Location: </span> {{course?.officeLocation}}<br>
+              <span>Office Hours: </span> {{course?.officeHours}}<br>
+            </div>
+          </div>
+          <div class="details-body">
+            <span>Course Summary</span>
+            {{course?.summary}}
+          </div>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,50 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Signup</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div text-center class="authentication-intro">
+        <p>Hello there!</p>
+        <p>Please fill out the form below to get started</p>
+    </div>
+
+    <form [formGroup]="signupForm" (ngSubmit)="signup(signupForm.value)">
+
+        <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <p class="form-error" *ngIf="!signupForm.controls['email'].valid && signupForm.controls['email'].touched" ion-item no-lines>
+            * Please enter a valid email
+        </p>
+        
+        <ion-item>
+            <ion-label stacked>Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <p class="form-error" *ngIf="!signupForm.controls['password'].valid && signupForm.controls['password'].touched" ion-item no-lines>
+            * Please enter a valid password
+        </p>
+        
+
+        <button type="submit" class="btn-margin-top" [disabled]="!signupForm.valid" color="primary" ion-button block>Sign up</button>
+
+        <p class="authentication-switch" text-center ion-item no-lines>
+            <a (click)="goToLogin()"> Already have an account? Log in</a>
+        </p>
+
+    </form>
+    
+</ion-content>

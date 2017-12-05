@@ -1,0 +1,280 @@
+
+.authentication-intro {
+    font-size: 0.9em;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.form-error {
+    font-size: 0.7em;
+    color: color($colors, danger);
+}
+
+.btn-margin-top {
+    margin-top: 1.5em;
+}
+
+.authentication-switch {
+    font-size: 1.1em;
+    cursor: pointer;
+    text-decoration: underline;
+    color: color($colors, primary);
+}
+
+//Courses...
+
+// -------------------------------------------------- \\
+// --------------- App Global SASS  ----------------- \\
+// -------------------------------------------------- \\
+
+@import url('http://fonts.googleapis.com/css?family=Raleway:300,700');
+
+.text-center{
+    text-align: center;
+}
+
+ion-content.slides{
+    background-color: #EFEFEF;
+    font-family: 'Raleway';
+}
+
+ion-icon{ cursor: pointer; }
+
+.slide-menu{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: url('../assets/imgs/intro_slide_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu-header{ margin-top: 10%; }
+
+.logo-container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.menu-logo{
+    position: relative;
+    border-radius: 50%;
+    width: 45%;
+    height: auto;
+    padding-top: 45%;
+    margin: 5px auto 0 auto;
+    box-shadow: #888888 2px 2px 5px;
+    border: 1px solid #888888;
+}
+
+.li-item{ cursor: pointer; }
+
+/** Loader Styles **/
+.loader{
+    border: 3px solid #d1d1d1; /* Light grey */
+    border-top: 3px solid #3498db; /* Blue */
+    border-bottom: 3px solid #30c403; /* Blue */
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 1s linear infinite;
+}
+
+/* ...Spin loader... */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* page-home { } */
+
+.slides{
+    display: block;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.home-contents{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #eef;
+}
+
+.slides-intro-bg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: url('../../assets/imgs/intro_slide_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.diag{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    height: 100%;
+}
+
+ion-icon.initSlides{
+    margin-top: 30%;
+    font-size: 7em;
+}
+
+h3.initSlides{
+    margin-top: 40% !important;
+    font-weight: bold;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+
+p.initSlides{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    font-size: 1em;
+    color: #032;
+}
+
+//Change bullet colors on active slide...
+.swiper-pagination-bullet-active{ background: #009900; }
+.swiper-pagination{ bottom: 9% !important;} //Bullet height from buttom...
+
+#skip{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 5px;
+    bottom: 20px;
+    text-align: center;
+    background: none !important;
+    cursor: pointer;
+    z-index: 5;
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-family: Lucida, sans-serif;
+}
+
+/* LIST CONTENT */
+div.list-content{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 90px;
+    
+    overflow: hidden;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #999;
+    box-shadow: 2px 2px 2px #888;
+}
+
+.list-content-left, .list-content-right{
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+div.list-content-left{ width: 30%; }
+
+div.list-content-right{
+    width: auto;
+    margin-left: 30%;
+}
+
+.list-tile-icon{
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding-top: 6%;
+    font-size: 10px;
+}
+
+.list-tile-icon img{
+    position: relative;
+    width: 94%;
+    height: 94%;
+    border-radius: 45%;
+}
+
+.list-title{
+    position: absolute;
+    width: 100%;
+    padding: 5px;
+    height: 30%;
+    color: #000;
+    border-bottom: 1px solid #000;
+}
+
+.list-title span{
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #27408B ;
+}
+
+.activity-tag{
+    display: block;
+    position: absolute;
+    top: 12%;
+    right: 4px;
+    width: 16%;
+    text-align: center;
+    height: 80%;
+    line-height:150%;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #27408B;
+}
+
+.list-course-id{
+    position: absolute;
+    padding: 5px;
+    color: #2F4F4F;
+    height: 10%;
+    top: 30%;
+}
+
+.list-course-id span{ font-weight: bold; }
+
+.list-department{
+    position: absolute;
+    padding: 5px;
+    color: #444;
+    top: 50%;
+}
+
+.list-last-post{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #333;
+    font-size: 10px;
+    padding-left: 5px;
+    padding-bottom: 2px;
+}

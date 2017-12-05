@@ -1,0 +1,73 @@
+<!--
+  Generated template for the EventModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-toolbar>
+      <ion-title>Event Details</ion-title>
+      <ion-buttons start>
+        <button ion-button (click)="close()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    
+    <ion-item>
+      <ion-label color="primary" stacked>Title</ion-label>
+      <ion-input type="text" readonly=true value="{{ event.title }}"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="event.allDay; else elseBlock">
+      <ion-label color="primary" stacked>Time</ion-label>
+      <ion-input type="text" readonly=true value="Add Day"></ion-input>
+    </ion-item>
+
+    <ng-template #elseBlock>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Start Date</ion-label>
+        <ion-input type="text" readonly=true value="{{ event.startTime | date:'fullDate' }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Start Time</ion-label>
+        <ion-input type="text" readonly=true value="{{ event.startTime | date:'shortTime' }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>End Date</ion-label>
+        <ion-input type="text" readonly=true value="{{ event.endTime | date:'fullDate' }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>End Time</ion-label>
+        <ion-input type="text" readonly=true value="{{ event.endTime | date:'shortTime' }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Location</ion-label>
+        <ion-textarea readonly=true value="{{ event.location }}"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="primary" stacked>Notes</ion-label>
+        <ion-textarea readonly=true value="{{ event.notes }}"></ion-textarea>
+      </ion-item>
+
+    </ng-template>
+
+  </ion-list>
+
+</ion-content>

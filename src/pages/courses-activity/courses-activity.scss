@@ -1,0 +1,72 @@
+
+
+
+.post-tile{
+    display: block;
+    position: relative;
+    width: 100%;
+    min-height: 50px;
+    padding: 4px 4px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 2px 2px 2px #bbb;
+    border: 1px solid #bbb;
+
+    background-color: #000;
+}
+
+.post-tile{ background-color: #fff; }
+
+.post-title{
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    position: relative;
+    display: block;
+    padding: 0;
+    left: 0;
+    width: 100%;
+}
+
+.post-title h6{
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.post-preview{
+    display: block;
+    color: #444;
+    font-size: 12px;
+}
+
+.post-img{
+    position: absolute;
+    display: inline-block;
+    width: 20%;
+    top: 2px;
+    bottom: 2px;
+    max-height: 50px;
+    border: 2px solid #ccc;
+}
+
+.post-content{
+    display: inline-block;
+    margin-left: 23%;
+}
+
+.post-author{
+    color: #555;
+    font-size: 9px;
+    margin-top: 0;
+    float: left;
+}
+
+span.post-date{
+    float: right;
+    font-size: 9px;
+    color: #555;
+    margin-left: 10px;
+}
+
+.post-title h6 a, .post-title h6 a:Hover{
+    text-decoration: none;
+    display: block;
+}

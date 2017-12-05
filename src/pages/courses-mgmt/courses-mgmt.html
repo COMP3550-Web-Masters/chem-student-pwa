@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>  
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <div *ngIf="showSpinner" class="loader"></div>
+    </ion-buttons>
+    <ion-title>{{pageName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- Start content -->
+<ion-content padding>
+    <div class="header-item">
+      <ion-navbar>
+        <ion-segment [(ngModel)]="options">
+            <ion-segment-button value="all" (click)="selectAll()">All</ion-segment-button>
+            <ion-segment-button value="fav" (click)="selectEnrolled()">Enrolled</ion-segment-button>
+        </ion-segment>
+      </ion-navbar>
+    </div>
+
+  <!-- All Courses -->
+  <div *ngIf="viewAll">
+    <div class="list-content animated slideInUp" *ngFor = "let course of courseList$ | async" 
+      navPush="CoursesDetailsPage" [navParams]="{course: course, enrolled: false}">
+      <div class="list-content-left">
+        <div class="list-tile-icon">
+          <img src="../../assets/imgs/random-logo.png" alt="Mo Image Available">
+        </div>
+      </div>
+      <div class="list-content-right">
+        <div class="list-title">
+          <span>{{course.code}}</span>
+          <div class="activity-tag"></div>
+        </div>
+        <div class="list-course-id"><span>{{course.name}}</span></div>
+        <div class="list-last-post">credits: {{course.credits}}</div>
+      </div>
+    </div>
+  </div>
+  <!-- Enroll Courses -->
+  <div *ngIf="!viewAll">
+    <div *ngIf="noEnrollment">You are not enrolled in any courses!</div>
+    <div class="list-content enr-color animated slideInUp" *ngFor = "let enroll of enrolledCourseList$ | async"
+      navPush="CoursesActivityPage" [navParams]="{enrollObj: enroll, enrolled: true}">
+      <div class="list-content-left">
+        <div class="list-tile-icon">
+          <img src="../../assets/imgs/random-logo.png" alt="Mo Image Available">
+        </div>
+      </div>
+      <div class="list-content-right">
+        <div class="list-title">
+          <span>{{enroll.code}}</span>
+          <div class="activity-tag"></div>
+        </div>
+        <div class="list-course-id"><span>{{enroll.course.name}}</span></div>
+        <div class="list-last-post">Credits: {{enroll.course.credits}}</div>
+      </div>
+    </div>
+  </div>
+
+</ion-content> <!-- End contents -->

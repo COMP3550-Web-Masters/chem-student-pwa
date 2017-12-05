@@ -1,0 +1,22 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ title }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div class="container">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-action msg" *ngFor="let msg of deptMsgList$ | async">
+        {{msg.msg}}
+      </li>
+    </ul>
+  </div>
+</ion-content>
