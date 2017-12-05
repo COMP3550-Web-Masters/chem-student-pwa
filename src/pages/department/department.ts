@@ -9,6 +9,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class DepartmentPage {
 
   tabs: Tab[] = [
+    { title: 'Home', icon: 'home', root: 'DepartmentHomePage'},
     { title: 'News', icon: 'information-circle', root: 'DepartmentNewsPage' },
     { title: 'Courses', icon: 'information-circle', root: 'CoursesMgmtPage' },
   ];

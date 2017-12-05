@@ -5,7 +5,7 @@ import { DepartmentService } from './../../services/department/department.servic
 import { ToastService } from './../../services/toast/toast.services'; 
 import { StorageService } from './../../services/storage/storage.service';
 import { DepartmentMessage } from './../../models/department/department.model';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observaable';
 
 @IonicPage()
 @Component({
@@ -39,6 +39,7 @@ export class DepartmentNewsPage {
         }))
       }
     )
+    //this.postToDepartment("Test Post");
   }
 
   ionViewDidLoad() {

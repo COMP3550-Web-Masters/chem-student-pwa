@@ -37,8 +37,10 @@ export class DepartmentService {
     }
 
     postToDepartment(message: string){
-        const post = { message, 'timestamp': firebase.database.ServerValue.TIMESTAMP };
-        return this.deptReference.push(post.message);
+        return this.deptReference.push({
+            msg,
+            timestamp: firebase.database.ServerValue.TIMESTAMP
+        });
     }
 
     getDepartmentPosts(){ return this.deptReference; }

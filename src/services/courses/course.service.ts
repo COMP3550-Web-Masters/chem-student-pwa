@@ -13,6 +13,7 @@ export class CourseListService{
     private enrollmentDirectory:string = 'course-enrollment';
     private courseListDirectory:string = 'courses';
     private coursePostingDir:string = 'all-course-posts';
+    private eventsPostingDir:string = 'events';
     private courseListReference = this.db.list<Course> (this.courseListDirectory);
 
     //Primary constructor...
@@ -53,4 +54,6 @@ export class CourseListService{
     }
 
     setCoursePost(post:CoursePost){ return this.db.list<CoursePost>(this.coursePostingDir+"/"+post.code).push(post); }
+
+    getEventsPost(){ return this.db.list<CoursePost>(this.eventsPostingDir); }
 }

@@ -8,7 +8,6 @@ import { CourseListService } from './../../services/courses/course.service'
 import { ToastService } from './../../services/toast/toast.services'; 
 import { Course, Enroll } from './../../models/course/course.model'; 
 
-
 @IonicPage()
 @Component({
   selector: 'page-courses-details',
